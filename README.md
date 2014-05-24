@@ -1,6 +1,6 @@
-A base debian box for any virtual network.
+A base debian box for my virtual network boxes.
 
-It provides :
+This box provides :
 
 * openssh-server
 * supervisord
