@@ -1,6 +1,6 @@
 A debian base box for your basic docker needs.
 
-It provides :
+This box provides :
 
 * openssh-server
 * supervisord
