@@ -1,9 +1,10 @@
-A base debian box for any virtual network.
+A debian base box for your basic docker needs.
 
 It provides :
 
 * openssh-server
 * supervisord
 
-Default access by SSH with user "root" and password "docker"
+Default access (please change it !):
+* SSH : user "root" / password "docker"
 
