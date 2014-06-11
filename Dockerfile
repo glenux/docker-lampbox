@@ -5,7 +5,7 @@ RUN apt-get install -y openssh-server
 RUN service ssh start ; sleep 1
 RUN service ssh stop
 RUN echo "root:docker" | chpasswd
-RUN apt-get install -y supervisor
+RUN apt-get install -y supervisor bindfs
 RUN service supervisor stop
 
 EXPOSE 22
