@@ -1,16 +1,10 @@
-FROM debian:wheezy
+FROM wnameless/mysql-phpmyadmin:latest
 MAINTAINER Glenn ROLLAND, <glenux@glenux.net>
 RUN apt-get update
-RUN apt-get install -y openssh-server
-RUN service ssh start ; sleep 1
-RUN service ssh stop
 RUN echo "root:docker" | chpasswd
-RUN apt-get install -y supervisor bindfs
-RUN service supervisor stop
+RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 
-EXPOSE 22
+#ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#ADD supervisor-ssh.conf /etc/supervisor/conf.d/ssh.conf
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD supervisor-ssh.conf /etc/supervisor/conf.d/ssh.conf
-
-CMD /usr/bin/supervisord
+#CMD /usr/bin/supervisord
