@@ -1,10 +1,14 @@
-A debian base box for your basic docker needs.
+LAMP box
+========
+
+A debian PHP + MySQL box for your development needs.
 
 This box provides :
 
-* openssh-server - to give a network shell
-* supervisord - to manage your daemons
-* bindfs - to mount directories with different permissions
+* openssh-server
+* mysql-server
+* phpmyadmin
+* supervisord
 
 Default access (please change it !):
 * SSH : user "root" / password "docker"
